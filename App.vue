@@ -14,4 +14,12 @@
 
 <style>
 	/*每个页面公共css */
+	/* scroll-view组件隐藏滚动条 */
+	.scroll-view-class ::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	::-webkit-scrollbar {
+		display: none !important;
+	}
 </style>

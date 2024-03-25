@@ -6,12 +6,17 @@
 		<view class="option">
 
 		</view>
+		<tabbar page="user" />
 	</view>
 </template>
 
 <script>
+	import tabbar from "@/components/tabbar/index"
 	export default {
 		name: "user",
+		components: {
+			tabbar
+		},
 		data() {
 			return {}
 		},
