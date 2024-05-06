@@ -57,5 +57,30 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"subPackages": [{
+		"root": "pages_dynamic",
+		"pages": [{
+			"path": "detail",
+			"style": {
+				"navigationBarTitleText": "动态详情"
+
+			}
+		}]
+	}, {
+		"root": "pages_notice",
+		"pages": [{
+			"path": "list",
+			"style": {
+				"navigationBarTitleText": "寻宠启示列表",
+				"navigationStyle": "custom"
+
+			}
+		}, {
+			"path": "detail",
+			"style": {
+				"navigationBarTitleText": "启示详情"
+			}
+		}]
+	}]
 }

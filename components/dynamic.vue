@@ -1,7 +1,7 @@
 <template>
 	<view class="dynamic">
 		<view v-for="(item,index) in list" :key="index" class="list"
-			@tap.stop="this.$public.toUrl(`../../pages_dynamic/detail?id=${item.share.id}`,'2')">
+			@tap.stop="$public.toUrl(`../../pages_dynamic/detail`,'2')">
 			<view class="headSculpture" @click.stop="toInfo(item)">
 				<image :src="item.publisher.url" class="head" mode="aspectFill"></image>
 			</view>
@@ -19,21 +19,21 @@
 				<view class=" contentImg" v-if="item.share.urls.length>0">
 					<view v-for="(item1,index) in item.share.urls" :key="index">
 						<video :src="item1" v-if="item1.substr(item1.lastIndexOf('.')+1)=='mp4'"></video>
-						<image :src="item1" v-else mode="aspectFill" :style="item.share.urls.length==1?'width:100%;height:240rpx':''">
+						<image :src="item1" v-else mode="aspectFill"
+							:style="item.share.urls.length==1?'width:100%;height:240rpx':''">
 						</image>
 					</view>
 				</view>
 				<view class="footer">
 					<view class="left">
-						<view class="time">{{changeTime(item.share.time)}}</view>
+						<view class="time">{{$public.changeTime(item.share.time)}}</view>
 						<view class="position" v-if="item.share.address&&item.share.address!=''">
 							{{item.share.address}}
 						</view>
 					</view>
 					<view class="right">
 						<view class="love" @tap.stop="loveBtn(item)">
-							<image
-								:src="item.share.hearted?'../static/img/loveSel.png':'../static/img/love.png'" />
+							<image :src="item.share.hearted?'../static/img/loveSel.png':'../static/img/love.png'" />
 							<text>{{item.share.heart}}</text>
 						</view>
 						<view class="message">
@@ -55,49 +55,6 @@
 		data() {
 			return {}
 		},
-		methods: {
-
-			// 转化时间
-			changeTime(dateString) {
-				// 创建一个Date对象  
-				const inputDate = new Date(dateString);
-				// 获取当前日期和年份  
-				const today = new Date();
-				const thisYear = new Date(today.getFullYear(), 0, 1);
-				// 返回格式化后的日期或时间字符串  
-				return this.formatDateWithoutLeadingZeros(inputDate);
-			},
-			// 格式化日期的辅助函数  
-			formatDateWithoutLeadingZeros(date) {
-				const year = date.getFullYear();
-				const month = date.getMonth() + 1; // getMonth() 返回的是 0-11  
-				const day = date.getDate();
-				const hours = date.getHours();
-				const minutes = date.getMinutes();
-				// 根据需要返回格式化后的日期或时间字符串  
-				if (this.isToday(date)) {
-					return `${hours}:${minutes}`;
-				} else if (this.isThisYear(date)) {
-					return `${month}/${day}`;
-				} else {
-					return `${year}/${month}/${day}`;
-				}
-			},
-			// 判断是否是今天的函数  
-			isToday(date) {
-				const today = new Date();
-				return (
-					date.getFullYear() === today.getFullYear() &&
-					date.getMonth() === today.getMonth() &&
-					date.getDate() === today.getDate()
-				);
-			},
-			// 判断是否是今年的函数  
-			isThisYear(date) {
-				const today = new Date();
-				return date.getFullYear() === today.getFullYear();
-			},
-		}
 	}
 </script>
 
