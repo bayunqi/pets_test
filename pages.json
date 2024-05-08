@@ -9,14 +9,13 @@
 		}, {
 			"path": "pages/dynamic/index",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "动态",
 				"navigationStyle": "custom"
 			}
 		}, {
 			"path": "pages/pub/index",
 			"style": {
-				"navigationBarTitleText": "",
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "发布"
 			}
 		}, {
 			"path": "pages/health/index",
