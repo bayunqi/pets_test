@@ -41,6 +41,7 @@
 				tabBarList: [{
 						selectIndex: 'index',
 						pageIndex: "../../pages/index/index",
+						// pageIndex: "../../pages/index_test/index_test",
 						tabbarName: "首页",
 						iconPath: "../../static/icon/index.png",
 						selectIconPath: "../../static/icon/indexSel.png"

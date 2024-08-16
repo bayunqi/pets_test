@@ -1,5 +1,6 @@
 <template>
 	<scroll-view scroll-y="true" class="index">
+		<!-- 这一行代码的作用是让下面的立即绑定模块与页面顶部存在一定的距离 -->
 		<view style="height: 40rpx;"></view>
 		<view class="info" @tap="$refs.petsInfo.open()">
 			<image src="" class="head"></image>
